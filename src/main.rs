@@ -1,7 +1,8 @@
-fn main() {
-		greet("Hello World!");
-}
+use std::env;
 
-fn greet(greeting: &str) {
-	println!("{}", greeting);
+fn main() {
+	let args: Vec<String> = env::args().collect();
+	for greeting in &args[1..] {
+		println!("Hello '{}'", greeting);
+	}
 }
